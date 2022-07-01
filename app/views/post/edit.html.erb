@@ -1,0 +1,31 @@
+<div class="main">
+    <div class="schedule_view">
+    <%= form_with model: @post do |f| %>
+<table>
+ <tr>
+    <th><%= f.label :content ,"タイトル" %></th>
+    <td><%= f.text_field :content, class: "edit title" %></td>
+ </tr>
+ 
+ <tr>
+    <th><%= f.label :about ,"詳細" %></th>
+    <td><%= f.text_area :about, class: "edit about" %></td>
+ </tr>
+ 
+ <tr>
+    <th><%= f.label :date ,"予定日" %></th>
+    <td><%= f.date_field :schedule_date, class: "edit date" %></td>
+ </tr>
+
+ <tr>
+    <th><%= f.label :allday ,"終日" %></th>
+    <td><%= f.check_box :allday, checked: true, class: "edit allday" %></td>
+ </tr>
+</table>   
+        <%= f.submit "SAVE", class: "btn editBtn" %>
+   <% end %>
+         <a href="" class="btn deleteBtn">DELETE</a>
+         <%= link_to "BACK", "/", class: "btn backBtn" %>
+    </div>
+     
+</div>

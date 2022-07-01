@@ -1,0 +1,29 @@
+<div class="main">
+    <div class="schedule_view">
+<table>
+ <tr>
+    <th>Title</th>
+    <td><%= @post.content %></td>
+ </tr>
+ 
+ <tr>
+    <th>About</th>
+    <td><%= @post.about %></td>
+ </tr>
+ 
+ <tr>
+    <th>Date</th>
+    <td><%= @post.date %></td>
+ </tr>
+
+ <tr>
+    <th>Allday</th>
+    <td><%= @post.allday ? '◯' : '×' %></td>
+ </tr>
+
+</table>
+      <%= link_to "BACK", "/", class: "btn backBtn" %>
+      <%= link_to "DELETE", post_path, method: :delete,class: "btn deleteBtn", data: { confirm: "本当に削除しますか？" } %>
+      <%= link_to "EDIT", edit_post_path(@post.id), class: "btn editBtn" %>
+    </div>
+</div>

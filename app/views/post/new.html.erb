@@ -1,0 +1,31 @@
+<div class="create_new">
+<h2>NEW SCHEDULE</h2>
+<%= form_with model: @post do |f| %>
+<table>
+ <tr>
+    <th><%= f.label :content ,"タイトル" %></th>
+    <td><%= f.text_field :content, class: "new title" %></td>
+ </tr>
+ 
+ <tr>
+    <th><%= f.label :about ,"詳細" %></th>
+    <td><%= f.text_area :about, class: "new about" %></td>
+ </tr>
+ 
+ <tr>
+    <th><%= f.label :date ,"予定日" %></th>
+    <td><%= f.date_field :date, class: "new date" %></td>
+ </tr>
+
+ <tr>
+    <th><%= f.label :allday ,"終日" %></th>
+    <td><%= f.check_box :allday, checked: true, class: "new allday" %></td>
+ </tr>
+
+</table>
+ <ul>
+    <li><%= f.submit "CREATE", class: "btn newBtn" %></li>
+<% end %>
+    <li><%= link_to "BACK", "/", class: "btn newBackBtn" %></li>
+ </ul>
+</div>
